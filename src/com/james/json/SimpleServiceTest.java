@@ -1,3 +1,9 @@
+/* http://lijingshou.iteye.com/blog/1998209 
+ * 
+ * 使用httpclient处理API返回.
+ * 如下例子演示如何使用httpClient获取API返回的JSON字符串以及处理:
+ * 
+ * */
 package com.james.json;
 
 import java.io.IOException;
@@ -17,8 +23,11 @@ import org.json.JSONObject;
 public class SimpleServiceTest {
 
 	public static void main(String[] args) throws ClientProtocolException, IOException {
+		//创建HttpClient对象
 		CloseableHttpClient httpclient = HttpClients.createDefault();
+		//如果发送是Post请求，创建HttpPost对象
 		HttpPost httppost = new HttpPost("http://jingshou.com/admin/searchUser.action?search_loginid=jingshou");
+		//使用httpclient的execute方法发送接口请求
 		CloseableHttpResponse response = httpclient.execute(httppost);
 		try {
 			HttpEntity myEntity = response.getEntity();

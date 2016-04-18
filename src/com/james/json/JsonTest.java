@@ -1,11 +1,11 @@
-//使用httpClient进行接口测试
-package com.james.json;
 /* http://lijingshou.iteye.com/blog/1998209 
- * 
+ *
  * 处理Json对象的基本API
  * JSON包中最常用的两个类就是JSONObject和JSONArray,具体可以参考JSON for java入门总结
  * 如下是自己模仿的简单例子: 
  */
+package com.james.json;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,6 +21,7 @@ public class JsonTest {
 				String username = null;
 				int userage = 0;
 				JSONObject jsonobj = null;
+				//可以通过字符串直接构造一个JSONObject,JSONObject里的key在显式传入的时候是用单引号包裹起来的,但是打印出来的时候依然是我们期望的双引号
 				jsonobj = new JSONObject("{'name':'jingshou','age':30}");			 	        
 				username = jsonobj.getString("name");
 				userage = jsonobj.getInt("age");
