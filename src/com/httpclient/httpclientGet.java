@@ -1,5 +1,5 @@
 package com.httpclient;
-//根据老徐的教程学习httpclient
+//学习httpclient
 //Get
 import java.io.IOException;
 import java.util.Map;
@@ -14,6 +14,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 public class httpclientGet {
+	//TODO 需要好好理解
 	//张飞博客，GET请求时，参数一般是写在链接上的，代码如下：
 	public void get(String url){
 	    CloseableHttpClient httpClient = null;
@@ -43,6 +44,7 @@ public class httpclientGet {
 	        }
 	    }
 	}
+	//TODO 需要好好理解
 	//张飞博客，Get请求，如果想把参数不写在链接上，单独的传进去，则可以这样
 	public void get(String url, Map<String, String> params){
 	    CloseableHttpClient httpClient = null;
@@ -83,20 +85,24 @@ public class httpclientGet {
 	    }
 	}
 	
-	//老徐PPT，httpclient接口测试
+	//老徐PPT，httpclient接口测试,无参数方法getxu
 	public void getXu(String url){
 				//创建HttpClient对象
 				CloseableHttpClient httpClient = HttpClients.createDefault();
 				//如果发送是GET请求，创建HttpGet对象
 				 HttpGet httpget = new HttpGet(url); 
-				//执行GET请求
+				
 				try {
+					//执行GET请求
 					CloseableHttpResponse response =  httpClient.execute(httpget);
 					//设置请求和传输超时时间
 					RequestConfig requestConfig = RequestConfig.custom()
 					.setSocketTimeout(20000).setConnectTimeout(20000).build();
 					//get请求设置请求和传输超时时间 
+					
 					httpget.setConfig(requestConfig);
+					HttpEntity httpEntity = response.getEntity();
+					System.out.println(EntityUtils.toString(httpEntity,"utf-8"));
 
 				} catch (ClientProtocolException e) {
 					e.printStackTrace();
@@ -118,7 +124,9 @@ public class httpclientGet {
 	}
 	public static void main(String[] args) {
 		
-		
+		httpclientGet httpget = new httpclientGet();
+		//getRegionCountry 获得国外国家名称和与之对应的ID，输入参数：无，返回数据：一维字符串数组。
+		httpget.getXu("http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getRegionCountry");
 		
 
 	}
