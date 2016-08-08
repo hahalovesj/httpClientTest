@@ -1,8 +1,8 @@
 /* http://lijingshou.iteye.com/blog/1998209 
  *
- * ´¦ÀíJson¶ÔÏóµÄ»ù±¾API
- * JSON°üÖĞ×î³£ÓÃµÄÁ½¸öÀà¾ÍÊÇJSONObjectºÍJSONArray,¾ßÌå¿ÉÒÔ²Î¿¼JSON for javaÈëÃÅ×Ü½á
- * ÈçÏÂÊÇ×Ô¼ºÄ£·ÂµÄ¼òµ¥Àı×Ó: 
+ * å¤„ç†Jsonå¯¹è±¡çš„åŸºæœ¬API
+ * JSONåŒ…ä¸­æœ€å¸¸ç”¨çš„ä¸¤ä¸ªç±»å°±æ˜¯JSONObjectå’ŒJSONArray,å…·ä½“å¯ä»¥å‚è€ƒJSON for javaå…¥é—¨æ€»ç»“
+ * å¦‚ä¸‹æ˜¯è‡ªå·±æ¨¡ä»¿çš„ç®€å•ä¾‹å­: 
  */
 package com.james.json;
 
@@ -21,7 +21,7 @@ public class JsonTest {
 				String username = null;
 				int userage = 0;
 				JSONObject jsonobj = null;
-				//¿ÉÒÔÍ¨¹ı×Ö·û´®Ö±½Ó¹¹ÔìÒ»¸öJSONObject,JSONObjectÀïµÄkeyÔÚÏÔÊ½´«ÈëµÄÊ±ºòÊÇÓÃµ¥ÒıºÅ°ü¹üÆğÀ´µÄ,µ«ÊÇ´òÓ¡³öÀ´µÄÊ±ºòÒÀÈ»ÊÇÎÒÃÇÆÚÍûµÄË«ÒıºÅ
+				//å¯ä»¥é€šè¿‡å­—ç¬¦ä¸²ç›´æ¥æ„é€ ä¸€ä¸ªJSONObject,JSONObjecté‡Œçš„keyåœ¨æ˜¾å¼ä¼ å…¥çš„æ—¶å€™æ˜¯ç”¨å•å¼•å·åŒ…è£¹èµ·æ¥çš„,ä½†æ˜¯æ‰“å°å‡ºæ¥çš„æ—¶å€™ä¾ç„¶æ˜¯æˆ‘ä»¬æœŸæœ›çš„åŒå¼•å·
 				jsonobj = new JSONObject("{'name':'jingshou','age':30}");			 	        
 				username = jsonobj.getString("name");
 				userage = jsonobj.getInt("age");

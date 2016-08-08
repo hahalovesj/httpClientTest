@@ -3,10 +3,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="lib/httpclient-4.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.4.1.jar" sourcepath="D:/Repositories/Maven/org/apache/httpcomponents/httpclient/4.4.1/httpclient-4.4.1-sources.jar"/>
 	<classpathentry kind="lib" path="lib/httpcore-4.4.1.jar"/>
-	<classpathentry kind="lib" path="D:/shenjing/eclipseMars_workspace/httpclientTest/lib/gson-2.2.4.jar"/>
-	<classpathentry kind="lib" path="D:/shenjing/eclipseMars_workspace/httpclientTest/lib/jsoup-1.8.3.jar"/>
-	<classpathentry kind="lib" path="D:/shenjing/eclipseMars_workspace/httpclientTest/lib/json.jar"/>
+	<classpathentry kind="lib" path="D:/myGithub/httpClientTest/lib/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="D:/myGithub/httpClientTest/lib/jsoup-1.8.3.jar"/>
+	<classpathentry kind="lib" path="D:/myGithub/httpClientTest/lib/json.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

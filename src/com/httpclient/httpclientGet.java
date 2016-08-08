@@ -1,5 +1,5 @@
 package com.httpclient;
-//Ñ§Ï°httpclient
+//å­¦ä¹ httpclient
 //Get
 import java.io.IOException;
 import java.util.Map;
@@ -14,8 +14,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 public class httpclientGet {
-	//TODO ĞèÒªºÃºÃÀí½â
-	//ÕÅ·É²©¿Í£¬GETÇëÇóÊ±£¬²ÎÊıÒ»°ãÊÇĞ´ÔÚÁ´½ÓÉÏµÄ£¬´úÂëÈçÏÂ£º
+	//TODO éœ€è¦å¥½å¥½ç†è§£
+	//å¼ é£åšå®¢ï¼ŒGETè¯·æ±‚æ—¶ï¼Œå‚æ•°ä¸€èˆ¬æ˜¯å†™åœ¨é“¾æ¥ä¸Šçš„ï¼Œä»£ç å¦‚ä¸‹ï¼š
 	public void get(String url){
 	    CloseableHttpClient httpClient = null;
 	    HttpGet httpGet = null;
@@ -44,8 +44,8 @@ public class httpclientGet {
 	        }
 	    }
 	}
-	//TODO ĞèÒªºÃºÃÀí½â
-	//ÕÅ·É²©¿Í£¬GetÇëÇó£¬Èç¹ûÏë°Ñ²ÎÊı²»Ğ´ÔÚÁ´½ÓÉÏ£¬µ¥¶ÀµÄ´«½øÈ¥£¬Ôò¿ÉÒÔÕâÑù
+	//TODO éœ€è¦å¥½å¥½ç†è§£
+	//å¼ é£åšå®¢ï¼ŒGetè¯·æ±‚ï¼Œå¦‚æœæƒ³æŠŠå‚æ•°ä¸å†™åœ¨é“¾æ¥ä¸Šï¼Œå•ç‹¬çš„ä¼ è¿›å»ï¼Œåˆ™å¯ä»¥è¿™æ ·
 	public void get(String url, Map<String, String> params){
 	    CloseableHttpClient httpClient = null;
 	    HttpGet httpGet = null;
@@ -85,20 +85,20 @@ public class httpclientGet {
 	    }
 	}
 	
-	//ÀÏĞìPPT£¬httpclient½Ó¿Ú²âÊÔ,ÎŞ²ÎÊı·½·¨getxu
+	//è€å¾PPTï¼Œhttpclientæ¥å£æµ‹è¯•,æ— å‚æ•°æ–¹æ³•getxu
 	public void getXu(String url){
-				//´´½¨HttpClient¶ÔÏó
+				//åˆ›å»ºHttpClientå¯¹è±¡
 				CloseableHttpClient httpClient = HttpClients.createDefault();
-				//Èç¹û·¢ËÍÊÇGETÇëÇó£¬´´½¨HttpGet¶ÔÏó
+				//å¦‚æœå‘é€æ˜¯GETè¯·æ±‚ï¼Œåˆ›å»ºHttpGetå¯¹è±¡
 				 HttpGet httpget = new HttpGet(url); 
 				
 				try {
-					//Ö´ĞĞGETÇëÇó
+					//æ‰§è¡ŒGETè¯·æ±‚
 					CloseableHttpResponse response =  httpClient.execute(httpget);
-					//ÉèÖÃÇëÇóºÍ´«Êä³¬Ê±Ê±¼ä
+					//è®¾ç½®è¯·æ±‚å’Œä¼ è¾“è¶…æ—¶æ—¶é—´
 					RequestConfig requestConfig = RequestConfig.custom()
 					.setSocketTimeout(20000).setConnectTimeout(20000).build();
-					//getÇëÇóÉèÖÃÇëÇóºÍ´«Êä³¬Ê±Ê±¼ä 
+					//getè¯·æ±‚è®¾ç½®è¯·æ±‚å’Œä¼ è¾“è¶…æ—¶æ—¶é—´ 
 					
 					httpget.setConfig(requestConfig);
 					HttpEntity httpEntity = response.getEntity();
@@ -125,7 +125,7 @@ public class httpclientGet {
 	public static void main(String[] args) {
 		
 		httpclientGet httpget = new httpclientGet();
-		//getRegionCountry »ñµÃ¹úÍâ¹ú¼ÒÃû³ÆºÍÓëÖ®¶ÔÓ¦µÄID£¬ÊäÈë²ÎÊı£ºÎŞ£¬·µ»ØÊı¾İ£ºÒ»Î¬×Ö·û´®Êı×é¡£
+		//getRegionCountry è·å¾—å›½å¤–å›½å®¶åç§°å’Œä¸ä¹‹å¯¹åº”çš„IDï¼Œè¾“å…¥å‚æ•°ï¼šæ— ï¼Œè¿”å›æ•°æ®ï¼šä¸€ç»´å­—ç¬¦ä¸²æ•°ç»„ã€‚
 		httpget.getXu("http://ws.webxml.com.cn/WebServices/WeatherWS.asmx/getRegionCountry");
 		
 

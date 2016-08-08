@@ -1,5 +1,5 @@
 package com.httpclient.copy;
-//根据老徐的教程学习httpclient
+//鏍规嵁鑰佸緪鐨勬暀绋嬪涔爃ttpclient
 import java.io.IOException;
 
 import org.apache.http.client.ClientProtocolException;
@@ -12,11 +12,11 @@ public class httpclientGet {
 
 	public static void main(String[] args) {
 		
-		//创建HttpClient对象
+		//鍒涘缓HttpClient瀵硅薄
 		CloseableHttpClient httpClient = HttpClients.createDefault();
-		//如果发送是GET请求，创建HttpGet对象
+		//濡傛灉鍙戦�佹槸GET璇锋眰锛屽垱寤篐ttpGet瀵硅薄
 		 HttpGet httpget = new HttpGet("http://www.baidu.com/"); 
-		//执行GET请求
+		//鎵цGET璇锋眰
 		try {
 			CloseableHttpResponse response =  httpClient.execute(httpget);
 		} catch (ClientProtocolException e) {

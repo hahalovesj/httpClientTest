@@ -1,7 +1,7 @@
 /* http://lijingshou.iteye.com/blog/1998209 
  * 
- * Ê¹ÓÃhttpclient´¦ÀíAPI·µ»Ø.
- * ÈçÏÂÀı×ÓÑİÊ¾ÈçºÎÊ¹ÓÃhttpClient»ñÈ¡API·µ»ØµÄJSON×Ö·û´®ÒÔ¼°´¦Àí:
+ * ä½¿ç”¨httpclientå¤„ç†APIè¿”å›.
+ * å¦‚ä¸‹ä¾‹å­æ¼”ç¤ºå¦‚ä½•ä½¿ç”¨httpClientè·å–APIè¿”å›çš„JSONå­—ç¬¦ä¸²ä»¥åŠå¤„ç†:
  * 
  * */
 package com.james.json;
@@ -23,11 +23,11 @@ import org.json.JSONObject;
 public class SimpleServiceTest {
 
 	public static void main(String[] args) throws ClientProtocolException, IOException {
-		//´´½¨HttpClient¶ÔÏó
+		//åˆ›å»ºHttpClientå¯¹è±¡
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		//Èç¹û·¢ËÍÊÇPostÇëÇó£¬´´½¨HttpPost¶ÔÏó
+		//å¦‚æœå‘é€æ˜¯Postè¯·æ±‚ï¼Œåˆ›å»ºHttpPostå¯¹è±¡
 		HttpPost httppost = new HttpPost("http://jingshou.com/admin/searchUser.action?search_loginid=jingshou");
-		//Ê¹ÓÃhttpclientµÄexecute·½·¨·¢ËÍ½Ó¿ÚÇëÇó
+		//ä½¿ç”¨httpclientçš„executeæ–¹æ³•å‘é€æ¥å£è¯·æ±‚
 		CloseableHttpResponse response = httpclient.execute(httppost);
 		try {
 			HttpEntity myEntity = response.getEntity();
@@ -35,16 +35,16 @@ public class SimpleServiceTest {
 			System.out.println(myEntity.getContentLength());
 			
 			String resString = EntityUtils.toString(myEntity);
-            // Ê¹ÓÃ·µ»ØµÄ×Ö·û´®Ö±½Ó¹¹ÔìÒ»¸öJSONObject		
+            // ä½¿ç”¨è¿”å›çš„å­—ç¬¦ä¸²ç›´æ¥æ„é€ ä¸€ä¸ªJSONObject		
 			JSONObject jsonobj;
 			try {
 				jsonobj = new JSONObject(resString);
 			
 			System.out.println(jsonobj.toString());
-			// »ñÈ¡·µ»Ø¶ÔÏóÖĞ"resultSizeµÄÖµ"
+			// è·å–è¿”å›å¯¹è±¡ä¸­"resultSizeçš„å€¼"
 			int resutltSize = jsonobj.getInt("resultSize");
 			System.out.println("Search Results Size is: "+ resutltSize); 
-			// »ñÈ¡"clients"µÄÖµ,ËüÊÇÒ»¸öJSONArray
+			// è·å–"clients"çš„å€¼,å®ƒæ˜¯ä¸€ä¸ªJSONArray
 			JSONArray jsonarray = jsonobj.getJSONArray("clients");
 			System.out.println(jsonarray.toString());
 			

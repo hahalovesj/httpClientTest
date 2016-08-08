@@ -1,5 +1,5 @@
 package com.httpclient;
-//¸ù¾İÀÏĞìµÄ½Ì³ÌÑ§Ï°httpclient 
+//æ ¹æ®è€å¾çš„æ•™ç¨‹å­¦ä¹ httpclient 
 //Post
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 public class httpclientPost {
-	//ÕÅ·É²©¿Í£¬POSTÇëÇóµÄ±íµ¥Ìá½»·½Ê½,´úÂëÈçÏÂ:http://www.cnblogs.com/zhangfei/p/5099036.html
+	//å¼ é£åšå®¢ï¼ŒPOSTè¯·æ±‚çš„è¡¨å•æäº¤æ–¹å¼,ä»£ç å¦‚ä¸‹:http://www.cnblogs.com/zhangfei/p/5099036.html
 	
 	public void post(String url, Map<String, String> params){
 	    CloseableHttpClient httpClient = null;
@@ -57,7 +57,7 @@ public class httpclientPost {
 	    }
 	}
 
-	//ÕÅ·É²©¿Í£¬POSTÇëÇóµÄRAW²ÎÊı´«µİ:
+	//å¼ é£åšå®¢ï¼ŒPOSTè¯·æ±‚çš„RAWå‚æ•°ä¼ é€’:
 	public void post(String url, String body){
 	    CloseableHttpClient httpClient = null;
 	    HttpPost httpPost = null;
@@ -90,18 +90,18 @@ public class httpclientPost {
 	
 	public static void main(String[] args) {
 		
-		//´´½¨HttpClient¶ÔÏó
+		//åˆ›å»ºHttpClientå¯¹è±¡
 		CloseableHttpClient httpClient = HttpClients.createDefault();
-		//Èç¹û·¢ËÍÊÇPostÇëÇó£¬´´½¨HttpPost¶ÔÏó
+		//å¦‚æœå‘é€æ˜¯Postè¯·æ±‚ï¼Œåˆ›å»ºHttpPostå¯¹è±¡
 		 HttpPost httppost = new HttpPost("http://www.baidu.com/"); 
-		//Ö´ĞĞPOSTÇëÇó
+		//æ‰§è¡ŒPOSTè¯·æ±‚
 		try {
-			//postÇëÇó²ÎÊıÅäÖÃ
+			//postè¯·æ±‚å‚æ•°é…ç½®
 			List<NameValuePair> formparams = new ArrayList<NameValuePair>(); 
 			formparams.add(new BasicNameValuePair("name", "xxx"));
 			formparams.add(new BasicNameValuePair("pwd", "123456")); 
 			
-			//Ê¹ÓÃhttpclientµÄexecute·½·¨·¢ËÍ½Ó¿ÚÇëÇó
+			//ä½¿ç”¨httpclientçš„executeæ–¹æ³•å‘é€æ¥å£è¯·æ±‚
 			CloseableHttpResponse response =  httpClient.execute(httppost);
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
